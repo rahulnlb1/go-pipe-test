@@ -2,8 +2,8 @@ resources:
   - name: S_GoPublishBinary_0001_GitRepo
     type: GitRepo
     configuration:
-      gitProvider: github_amirydev
-      path: amirydev/go-pipe-test
+      gitProvider: Github
+      path: rahulnlb1/go-pipe-test
       branches:
         include: main
 
@@ -16,12 +16,12 @@ pipelines:
           inputResources:
             - name: S_GoPublishBinary_0001_GitRepo
           integrations:
-            - name: myArti
+            - name: arti
       - name: S_GoPublishBinary_0001_2
         type: GoPublishBinary
         configuration:
           inputSteps:
             - name: S_GoPublishBinary_0001_1
           integrations:
-            - name: myArti
+            - name: arti
           targetRepository: test-automation-go-local
